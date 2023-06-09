@@ -11,6 +11,7 @@ var books = [
     { title: "Book 10", author: "Author 10", subject: "Subject 10", publishDate: "2023-10-07" },
     { title: "Book 11", author: "Author 11", subject: "Subject 11", publishDate: "2022-11-08" },
     { title: "Book 12", author: "Author 12", subject: "Subject 12", publishDate: "2021-12-09" },
+    
   ];
   function addBook() {
     const title = document.getElementById("bookTitle").value;
@@ -19,8 +20,8 @@ var books = [
     const publishDate = document.getElementById("bookPublishDate").value;
 
     if (title && author && subject && publishDate) {
-        const book = { title, author, subject, publishDate };
-        books.push(book); // Update book list with new book added
+        const bookes = { title, author, subject, publishDate };
+        books.push(bookes); // Update book list with new book added
         alert("successful");
     }
 
@@ -110,7 +111,7 @@ var books = [
   
     var filteredBooks = books.filter(function (book) {
       return (
-        book.title.toLowerCase().includes(titleFilter) &&
+        book.title.toLowerCase().includes(titleFilter) && 
         book.author.toLowerCase().includes(authorFilter) &&
         book.subject.toLowerCase().includes(subjectFilter) &&
         book.publishDate.toLowerCase().includes(dateFilter)
@@ -120,6 +121,7 @@ var books = [
     renderPagination(filteredBooks.length);
     displayBooks(filteredBooks);
     renderCriteriaCounts(books);
+    addBook(books);
   }
   
   function changePage(pageNumber) {
